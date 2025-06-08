@@ -6,6 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		348D73CD2DF53F9D009C5518 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 348D73CC2DF53F9D009C5518 /* SnapKit */; };
+		348D73D22DF53FEF009C5518 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 348D73D12DF53FEF009C5518 /* Alamofire */; };
+		348D73D92DF57C70009C5518 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 348D73D82DF57C70009C5518 /* SDWebImage */; };
+		348D73DB2DF57C70009C5518 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 348D73DA2DF57C70009C5518 /* SDWebImageMapKit */; };
+		348D74042DF589BA009C5518 /* SVProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 348D74032DF589BA009C5518 /* SVProgressHUD */; };
+		348D74072DF58A6C009C5518 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 348D74062DF58A6C009C5518 /* Toast */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		348D73712DEEC80E009C5518 /* CoreDataUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +45,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				348D74072DF58A6C009C5518 /* Toast in Frameworks */,
+				348D73D22DF53FEF009C5518 /* Alamofire in Frameworks */,
+				348D74042DF589BA009C5518 /* SVProgressHUD in Frameworks */,
+				348D73CD2DF53F9D009C5518 /* SnapKit in Frameworks */,
+				348D73DB2DF57C70009C5518 /* SDWebImageMapKit in Frameworks */,
+				348D73D92DF57C70009C5518 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +93,12 @@
 			);
 			name = CoreDataUIKit;
 			packageProductDependencies = (
+				348D73CC2DF53F9D009C5518 /* SnapKit */,
+				348D73D12DF53FEF009C5518 /* Alamofire */,
+				348D73D82DF57C70009C5518 /* SDWebImage */,
+				348D73DA2DF57C70009C5518 /* SDWebImageMapKit */,
+				348D74032DF589BA009C5518 /* SVProgressHUD */,
+				348D74062DF58A6C009C5518 /* Toast */,
 			);
 			productName = CoreDataUIKit;
 			productReference = 348D73712DEEC80E009C5518 /* CoreDataUIKit.app */;
@@ -107,6 +128,13 @@
 			);
 			mainGroup = 348D73682DEEC80E009C5518;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				348D73CB2DF53F9D009C5518 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				348D73D02DF53FEF009C5518 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				348D73D72DF57C70009C5518 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				348D74022DF589BA009C5518 /* XCRemoteSwiftPackageReference "SVProgressHUD" */,
+				348D74052DF58A6C009C5518 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 348D73722DEEC80E009C5518 /* Products */;
 			projectDirPath = "";
@@ -337,6 +365,82 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		348D73CB2DF53F9D009C5518 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		348D73D02DF53FEF009C5518 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+		348D73D72DF57C70009C5518 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.21.0;
+			};
+		};
+		348D74022DF589BA009C5518 /* XCRemoteSwiftPackageReference "SVProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SVProgressHUD/SVProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.1;
+			};
+		};
+		348D74052DF58A6C009C5518 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		348D73CC2DF53F9D009C5518 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 348D73CB2DF53F9D009C5518 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		348D73D12DF53FEF009C5518 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 348D73D02DF53FEF009C5518 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		348D73D82DF57C70009C5518 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 348D73D72DF57C70009C5518 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		348D73DA2DF57C70009C5518 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 348D73D72DF57C70009C5518 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+		348D74032DF589BA009C5518 /* SVProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 348D74022DF589BA009C5518 /* XCRemoteSwiftPackageReference "SVProgressHUD" */;
+			productName = SVProgressHUD;
+		};
+		348D74062DF58A6C009C5518 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 348D74052DF58A6C009C5518 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 348D73692DEEC80E009C5518 /* Project object */;
 }

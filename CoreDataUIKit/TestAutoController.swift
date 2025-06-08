@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class TestAutoController: UIViewController {
     override func viewDidLoad() {
@@ -32,12 +33,17 @@ class TestAutoController: UIViewController {
         view6.backgroundColor = .orange
         view6.translatesAutoresizingMaskIntoConstraints = false
         
+        let view7 = UIView()
+        view7.backgroundColor = .cyan
+        view7.translatesAutoresizingMaskIntoConstraints = false
+        
         view.addSubview(view1)
         view.addSubview(view2)
         view.addSubview(view3)
         view.addSubview(view4)
         view.addSubview(view5)
         view.addSubview(view6)
+        view.addSubview(view7)
         
         NSLayoutConstraint.activate([
             view1.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -72,6 +78,11 @@ class TestAutoController: UIViewController {
             
             view4.widthAnchor.constraint(equalTo: view5.widthAnchor, multiplier: 0.5),
             view4.widthAnchor.constraint(equalTo: view6.widthAnchor, multiplier: 1),
+            
+            view7.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            view7.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            view7.heightAnchor.constraint(equalToConstant: 250),
+            view7.trailingAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
 }

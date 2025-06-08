@@ -35,7 +35,7 @@ class EntriesViewController: UITableViewController {
                            icon: UIImage(systemName: "3.circle"),
                            iconBackgroundColor: .systemBlue,
                            accessoryType: .disclosureIndicator),
-               SettingsItem(title: "待机显示",
+               SettingsItem(title: "Feature",
                            icon: UIImage(systemName: "4.circle"),
                            iconBackgroundColor: .black,
                            accessoryType: .disclosureIndicator),
@@ -182,12 +182,18 @@ extension EntriesViewController {
             toCombinePage()
         } else if(item.title == "Auto"){
             toAutoPage()
+        } else if(item.title == "Feature"){
+            toFeaturePage()
         } else {
             print("点击了：\(item.title)")
             showToast(message: item.title)
         }
         // 这里可以进行页面跳转
         // performSegue(withIdentifier: "ShowDetail", sender: item)
+    }
+    func toFeaturePage(){
+        let featureVC = FeatureController()
+        navigationController?.pushViewController(featureVC, animated: true)
     }
     
     func toAutoPage(){

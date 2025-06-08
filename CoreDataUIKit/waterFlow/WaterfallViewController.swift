@@ -151,7 +151,7 @@ class WaterfallCell: UICollectionViewCell {
         titleLabel.layer.cornerRadius = 8
         titleLabel.layer.masksToBounds = true
         
-        let labelContainerView = titleLabel.addPadding(left: 20, right: 20)
+        let labelContainerView = titleLabel.withPadding(right: 20,left: 20)
         labelContainerView.translatesAutoresizingMaskIntoConstraints = false // MARK: "我要手动管理约束"
         contentView.addSubview(labelContainerView)
         
@@ -180,20 +180,3 @@ class WaterfallCell: UICollectionViewCell {
     }
 }
 
-extension UILabel {
-    func addPadding(top: CGFloat = 0, left: CGFloat = 0, bottom: CGFloat = 0, right: CGFloat = 0) -> UIView {
-        let containerView = UIView()
-        containerView.addSubview(self)
-        
-        self.translatesAutoresizingMaskIntoConstraints = false // MARK: "我要手动管理约束"
-        
-        NSLayoutConstraint.activate([
-            self.topAnchor.constraint(equalTo: containerView.topAnchor, constant: top),
-            self.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: left),
-            self.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -right),
-            self.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -bottom)
-        ])
-        
-        return containerView
-    }
-}
