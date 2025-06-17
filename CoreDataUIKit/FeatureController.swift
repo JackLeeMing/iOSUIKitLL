@@ -9,31 +9,7 @@ import UIKit
 import Alamofire
 import SDWebImage
 import Toast
-
-struct Res: Codable {
-    let code: String
-    let message: String
-    let data: ResData
-}
-
-struct ResData: Codable {
-    let total: Int
-    let page: Int
-    let page_size: Int
-    let data: [Feature]
-}
-
-struct Feature: Codable {
-    let id: Int
-    let imageUrl: String
-    let title: String
-    let tags: [String]
-    let hotRate: Int
-    let desc: String
-    let funcId: String
-    let order: Int
-    let isOpen: Bool
-}
+import SVProgressHUD
 
 class FeatureController: UIViewController {
     private var fetchTask: Task<Void, Never>?
@@ -43,7 +19,8 @@ class FeatureController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
-        self.view.makeToastActivity(.center)
+        // self.view.makeToastActivity(.center)
+        SVProgressHUD.show()
         Task {
           await fetchFeatures()
         }
@@ -77,6 +54,9 @@ class FeatureController: UIViewController {
         fetchTask = Task { [weak self] in
             guard let self = self else { return }
             do {
+                defer {
+                    SVProgressHUD.dismiss()
+                }
                 let res = try await AF.request("https://sua.h5lego.cn/api/v1/features?page=1&page_size=10")
                     .serializingDecodable(Res.self)
                     .value
@@ -275,7 +255,7 @@ class FeatureCell: UICollectionViewCell {
             .paragraphStyle: paragraphStyle
         ]
         titleLabel.textColor = .black
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 10)
+        titleLabel.font = UIFont.systemFont(ofSize: 12)
         titleLabel.textAlignment = .left
         titleLabel.layer.cornerRadius = 0
         titleLabel.layer.masksToBounds = true
@@ -290,7 +270,7 @@ class FeatureCell: UICollectionViewCell {
         titleLabel.textContainer.lineBreakMode = .byTruncatingTail
         titleLabel.isScrollEnabled = false
         
-        let labelView = titleLabel.withPadding(top: 2, right: 2,left: 2)
+        let labelView = titleLabel.withPadding(top: 6, right: 3,left: 4)
         labelView.translatesAutoresizingMaskIntoConstraints = false // MARK: "我要手动管理约束"
         labelView.backgroundColor = UIColor.white
         containerView.addSubview(labelView)
@@ -306,7 +286,7 @@ class FeatureCell: UICollectionViewCell {
             backgroundImageView.topAnchor.constraint(equalTo: containerView.topAnchor),
             backgroundImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
             backgroundImageView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
-            backgroundImageView.heightAnchor.constraint(equalTo: containerView.heightAnchor, constant: -32),
+            backgroundImageView.heightAnchor.constraint(equalTo: containerView.heightAnchor, constant: -36),
             //FeatureLayout.defaultItemHeight
             
             // 标题标签位于底部中心
@@ -314,12 +294,12 @@ class FeatureCell: UICollectionViewCell {
             labelView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
             labelView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
             labelView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
-            labelView.heightAnchor.constraint(equalToConstant: 32)
+            labelView.heightAnchor.constraint(equalToConstant: 36)
         ])
     }
     
     func configure(with item: Feature){
-        titleLabel.text = item.desc+"烦死了都开始漏打卡十六大凯撒漏打卡，双联单控，数量代课老师打开玛莎拉蒂，落实贷款，刘申申打开了搜到开始了都开始来的路上"
+        titleLabel.text = item.desc
         // 如果有实际图片，可以这样设置：
         // backgroundImageView.image = UIImage(named: item.imageName)
         backgroundImageView.sd_setImage(with: URL(string: item.imageUrl))

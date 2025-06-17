@@ -39,8 +39,8 @@ class EntriesViewController: UITableViewController {
                            icon: UIImage(systemName: "4.circle"),
                            iconBackgroundColor: .black,
                            accessoryType: .disclosureIndicator),
-               SettingsItem(title: "搜索",
-                           icon: UIImage(systemName: "magnifyingglass"),
+               SettingsItem(title: "Feature2",
+                           icon: UIImage(systemName: "5.circle"),
                            iconBackgroundColor: .systemGray,
                            accessoryType: .disclosureIndicator),
                SettingsItem(title: "相机",
@@ -184,6 +184,8 @@ extension EntriesViewController {
             toAutoPage()
         } else if(item.title == "Feature"){
             toFeaturePage()
+        } else if(item.title == "Feature2"){
+            toFeaturePage2()
         } else {
             print("点击了：\(item.title)")
             showToast(message: item.title)
@@ -191,6 +193,12 @@ extension EntriesViewController {
         // 这里可以进行页面跳转
         // performSegue(withIdentifier: "ShowDetail", sender: item)
     }
+    
+    func toFeaturePage2(){
+        let featureVC = NextFeatureController()
+        navigationController?.pushViewController(featureVC, animated: true)
+    }
+    
     func toFeaturePage(){
         let featureVC = FeatureController()
         navigationController?.pushViewController(featureVC, animated: true)
