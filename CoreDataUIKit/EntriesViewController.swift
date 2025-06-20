@@ -43,8 +43,8 @@ class EntriesViewController: UITableViewController {
                            icon: UIImage(systemName: "5.circle"),
                            iconBackgroundColor: .systemGray,
                            accessoryType: .disclosureIndicator),
-               SettingsItem(title: "相机",
-                           icon: UIImage(systemName: "camera"),
+               SettingsItem(title: "Author",
+                           icon: UIImage(systemName:"6.circle"),
                            iconBackgroundColor: .systemGray,
                            accessoryType: .disclosureIndicator),
                SettingsItem(title: "主屏幕与 App 资源库",
@@ -186,6 +186,8 @@ extension EntriesViewController {
             toFeaturePage()
         } else if(item.title == "Feature2"){
             toFeaturePage2()
+        }else if(item.title == "Author"){
+            toAuthor()
         } else {
             print("点击了：\(item.title)")
             showToast(message: item.title)
@@ -194,6 +196,10 @@ extension EntriesViewController {
         // performSegue(withIdentifier: "ShowDetail", sender: item)
     }
     
+    func toAuthor(){
+        let featureVC = AuthorContoller()
+        navigationController?.pushViewController(featureVC, animated: true)
+    }
     func toFeaturePage2(){
         let featureVC = NextFeatureController()
         navigationController?.pushViewController(featureVC, animated: true)

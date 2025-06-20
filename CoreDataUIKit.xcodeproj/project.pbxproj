@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		341D74822E0244B20089E5B0 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 341D74812E0244B20089E5B0 /* GRDB */; };
 		348D73CD2DF53F9D009C5518 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 348D73CC2DF53F9D009C5518 /* SnapKit */; };
 		348D73D22DF53FEF009C5518 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 348D73D12DF53FEF009C5518 /* Alamofire */; };
 		348D73D92DF57C70009C5518 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 348D73D82DF57C70009C5518 /* SDWebImage */; };
@@ -50,6 +51,7 @@
 				348D74042DF589BA009C5518 /* SVProgressHUD in Frameworks */,
 				348D73CD2DF53F9D009C5518 /* SnapKit in Frameworks */,
 				348D73DB2DF57C70009C5518 /* SDWebImageMapKit in Frameworks */,
+				341D74822E0244B20089E5B0 /* GRDB in Frameworks */,
 				348D73D92DF57C70009C5518 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,6 +101,7 @@
 				348D73DA2DF57C70009C5518 /* SDWebImageMapKit */,
 				348D74032DF589BA009C5518 /* SVProgressHUD */,
 				348D74062DF58A6C009C5518 /* Toast */,
+				341D74812E0244B20089E5B0 /* GRDB */,
 			);
 			productName = CoreDataUIKit;
 			productReference = 348D73712DEEC80E009C5518 /* CoreDataUIKit.app */;
@@ -134,6 +137,7 @@
 				348D73D72DF57C70009C5518 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				348D74022DF589BA009C5518 /* XCRemoteSwiftPackageReference "SVProgressHUD" */,
 				348D74052DF58A6C009C5518 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				341D74802E0244B20089E5B0 /* XCRemoteSwiftPackageReference "GRDB" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 348D73722DEEC80E009C5518 /* Products */;
@@ -171,6 +175,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CoreDataUIKit/CoreDataUIKitDebug.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QC3472KD69;
@@ -188,6 +194,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jaquelee.smart.CoreDataUIKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -199,6 +206,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CoreDataUIKit/CoreDataUIKit.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QC3472KD69;
@@ -216,6 +225,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jaquelee.smart.CoreDataUIKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -367,6 +377,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		341D74802E0244B20089E5B0 /* XCRemoteSwiftPackageReference "GRDB" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/groue/GRDB.swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		348D73CB2DF53F9D009C5518 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -410,6 +428,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		341D74812E0244B20089E5B0 /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 341D74802E0244B20089E5B0 /* XCRemoteSwiftPackageReference "GRDB" */;
+			productName = GRDB;
+		};
 		348D73CC2DF53F9D009C5518 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 348D73CB2DF53F9D009C5518 /* XCRemoteSwiftPackageReference "SnapKit" */;

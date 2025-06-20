@@ -22,7 +22,7 @@ class NetworkService {
                         } else {
                             continuation.resume(returning: [])
                         }
-                    case .failure(let error):
+                    case .failure(_):
                         continuation.resume(returning: [])
                     }
                 }
